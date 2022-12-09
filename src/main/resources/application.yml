@@ -1,0 +1,41 @@
+
+api:
+  version: 1.0.0
+  title: reto API
+  basePackage: com.enyoi.reto
+  description: Api reto
+  terms: https://
+
+
+#Server configurations
+server:
+  servlet:
+    context-path: /reto
+  port: ${PORT:8080}
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring doc:
+  api-docs:
+    path: /api-docs
+
+
+#Spring configs
+spring:
+  jpa:
+    defer-datasource-initialization: true
+    hibernate.ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    #jdbc:mysql://enyoi.co:3307/enyoi_db
+    #enyoi_db
+    #3tT9ip9_8
+    url: jdbc:mysql://localhost:3307/reto
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
